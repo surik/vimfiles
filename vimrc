@@ -53,8 +53,13 @@ map <F5> <Esc>:tabprev <CR>
 imap <F6> <Esc>:tabnext <CR>i
 map <F6> <Esc>:tabnext <CR>
 
+imap <F8> <Esc>:NERDTreeToggle <CR>i
+map <F8> <Esc>:NERDTreeToggle <CR>
+
 imap <F9> <Esc>:Tlist <CR>i
 map <F9> <Esc>:Tlist <CR>
+
+call togglebg#map("<F7>")
 
 set fileencoding=utf-8    " set save encoding"
 set termencoding=utf-8    " set terminal encoding"
@@ -76,7 +81,6 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r
 set statusline+=%{exists('*CapsLockStatusline')?CapsLockStatusline():''}
 set statusline+=%y
 set statusline+=%{exists('*fugitive#statusline')?fugitive#statusline():''}
-"set statusline+=%{exists('*rvm#statusline')?rvm#statusline():''}
 set statusline+=%#ErrorMsg#%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}
 set statusline+=%*%=%-16(\ %l,%c-%v\ %)%P
 
