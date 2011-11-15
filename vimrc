@@ -1,11 +1,12 @@
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
+set shm=atI                " Disable intro screen
 set lazyredraw             " Don't redraw screen during macros
 "set ttyfast                " Improves redrawing for newer computers
 set nocompatible
 set backspace=indent,eol,start
-set nobackup
+set incsearch
 set history=50
 set ruler
 set showcmd
@@ -22,6 +23,7 @@ set tabstop=4
 set smartindent
 syntax on
 set hlsearch
+
 if has('gui_running')
     set background=dark
     color solarized
@@ -38,26 +40,29 @@ else
     set t_Co=256
     color sorcerer_mod
 endif
+
 set nobackup       " no backup files 
 set nowritebackup  " only in case you don't want a backup file while editing 
 set noswapfile     " no swap files 
 set pastetoggle=<F2>
 set cursorline
 
-imap <F4> <Esc>:browse tabnew<CR> 
-map <F4> <Esc>:browse tabnew<CR>
+" Keys
+" =============================
+imap <F4> <Esc>:tabnew<Esc>:e ./<CR> 
+map <F4> <Esc>:tabnew<Esc>:e ./<CR>
 
-imap <F5> <Esc>:tabprev <CR>i
-map <F5> <Esc>:tabprev <CR>
+imap <F5> <Esc> :tabprev <CR>i
+map <F5> :tabprev <CR>
 
-imap <F6> <Esc>:tabnext <CR>i
-map <F6> <Esc>:tabnext <CR>
+imap <F6> <Esc> :tabnext <CR>i
+map <F6> :tabnext <CR>
 
 imap <F8> <Esc>:NERDTreeToggle <CR>i
 map <F8> <Esc>:NERDTreeToggle <CR>
 
 imap <F9> <Esc>:Tlist <CR>i
-map <F9> <Esc>:Tlist <CR>
+map <F9> :Tlist <CR>
 
 call togglebg#map("<F7>")
 
@@ -95,3 +100,21 @@ set wildmenu
 set wcm=<Tab>
 
 let Tlist_Show_One_File = 1
+
+" Rainbow Parentheses
+"imap <F8> <Esc> :RainbowParenthesesToggle <CR>i
+"map <F8> :RainbowParenthesesToggle <CR>
+"call rainbow_parentheses#LoadRound()
+"call rainbow_parentheses#LoadBraces()
+"call rainbow_parentheses#LoadSquare()
+"call rainbow_parentheses#LoadChevrons()
+
+" for old vimerl
+let g:erlangFold=1
+let g:erlangCompleteFile="/usr/share/vim/vim73/autoload/erlang_complete.erl"
+let g:erlangCheckFile="/usr/share/vim/vim73/compiler/erlang_check.erl"
+let g:erlangHighlightErrors=1
+let g:erlangCompletionGrep="zgrep"
+let g:erlangManSuffix="erl\.gz"
+let g:erlangFoldSplitFunction=0
+"====================================================================
