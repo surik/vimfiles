@@ -2,7 +2,7 @@ call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
 set shm=atI                " Disable intro screen
-set lazyredraw             " Don't redraw screen during macros
+"set lazyredraw             " Don't redraw screen during macros
 "set ttyfast                " Improves redrawing for newer computers
 set nocompatible
 set backspace=indent,eol,start
@@ -35,7 +35,7 @@ if has('gui_running')
     set guioptions-=r
     set guioptions-=e
     set guioptions+=c
-    set guifont=Liberation\ Mono\ 10
+    set guifont=Consolas\ 11
 else
     set t_Co=256
     color sorcerer_mod
@@ -46,6 +46,12 @@ set nowritebackup  " only in case you don't want a backup file while editing
 set noswapfile     " no swap files 
 set pastetoggle=<F2>
 set cursorline
+
+" clang
+let g:clang_debug=1 
+let g:clang_use_library=1 
+let g:clang_library_path="/usr/local/lib" 
+"let g:clang_complete_auto=0
 
 " Keys
 " =============================
@@ -80,6 +86,7 @@ autocmd FileType python set completeopt=menu
 autocmd FileType erlang compiler erlang
 autocmd FileType erlang set omnifunc=erlangcomplete#Complete
 autocmd FileType c compiler gcc
+autocmd FileType c set completeopt=menu 
 
 set laststatus=2
 set statusline=[%n]\ %<%.99f\ %h%w%m%r
