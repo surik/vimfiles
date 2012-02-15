@@ -35,10 +35,10 @@ if has('gui_running')
     set guioptions-=r
     set guioptions-=e
     set guioptions+=c
-    set guifont=Consolas\ 11
+    set guifont=Consolas\ for\ Powerline\ 11
 else
     set t_Co=256
-    color sorcerer_mod
+    color wombat256
 endif
 
 set nobackup       " no backup files 
@@ -67,8 +67,8 @@ map <F6> :tabnext <CR>
 imap <F8> <Esc>:NERDTreeToggle <CR>i
 map <F8> <Esc>:NERDTreeToggle <CR>
 
-imap <F9> <Esc>:Tlist <CR>i
-map <F9> :Tlist <CR>
+imap <F9> <Esc>:TagbarToggle <CR>i
+map <F9> :TagbarToggle <CR>
 
 call togglebg#map("<F7>")
 
@@ -116,12 +116,14 @@ let Tlist_Show_One_File = 1
 "call rainbow_parentheses#LoadSquare()
 "call rainbow_parentheses#LoadChevrons()
 
-" for old vimerl
-let g:erlangFold=1
-let g:erlangCompleteFile="/usr/share/vim/vim73/autoload/erlang_complete.erl"
-let g:erlangCheckFile="/usr/share/vim/vim73/compiler/erlang_check.erl"
-let g:erlangHighlightErrors=1
-let g:erlangCompletionGrep="zgrep"
-let g:erlangManSuffix="erl\.gz"
-let g:erlangFoldSplitFunction=0
-"====================================================================
+" for vimerl
+let g:erlang_completion_grep="zgrep"
+let g:erlang_man_extension="erl\.gz"
+let erlang_show_errors = 0
+let erlang_keywordprg = "man"
+
+" for powerline
+let g:Powerline_symbols = 'fancy'
+
+" for syntastic
+let g:syntastic_check_on_open = 1
