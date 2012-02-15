@@ -127,3 +127,6 @@ let g:Powerline_symbols = 'fancy'
 
 " for syntastic
 let g:syntastic_check_on_open = 1
+
+" for tagbar
+let g:tagbar_compact = 1
