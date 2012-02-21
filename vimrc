@@ -48,7 +48,7 @@ set pastetoggle=<F2>
 set cursorline
 
 " clang
-let g:clang_debug=1 
+let g:clang_debug=0 
 let g:clang_use_library=1 
 let g:clang_library_path="/usr/local/lib" 
 "let g:clang_complete_auto=0
@@ -84,7 +84,7 @@ set foldmethod=manual
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python set completeopt=menu 
 autocmd FileType erlang compiler erlang
-autocmd FileType erlang set omnifunc=erlangcomplete#Complete
+"autocmd FileType erlang set omnifunc=erlangcomplete#Complete
 autocmd FileType c compiler gcc
 autocmd FileType c set completeopt=menu 
 
