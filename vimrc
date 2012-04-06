@@ -130,3 +130,7 @@ let g:syntastic_check_on_open = 1
 
 " for tagbar
 let g:tagbar_compact = 1
+
+
+" for nerdtree
+let NERDTreeDirArrows=0
