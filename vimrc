@@ -35,7 +35,7 @@ if has('gui_running')
     set guioptions-=r
     set guioptions-=e
     set guioptions+=c
-    set guifont=Consolas\ for\ Powerline\ 11
+    set guifont=Consolas\ 11
 else
     set t_Co=256
     color wombat256
@@ -122,15 +122,55 @@ let g:erlang_man_extension="erl\.gz"
 let erlang_show_errors = 0
 let erlang_keywordprg = "man"
 
-" for powerline
-let g:Powerline_symbols = 'fancy'
-
 " for syntastic
 let g:syntastic_check_on_open = 1
 
 " for tagbar
 let g:tagbar_compact = 1
 
-
 " for nerdtree
 let NERDTreeDirArrows=0
+
+function! GenCscope()
+    exec "silent! !rm /tmp/cscope.out"
+    exec "silent! !cscope -R -b"
+    exec "silent! !cp cscope.out /tmp/cscope.out"
+    exec "silent! !rm cscope.out"
+    exec "silent! cs reset"
+    exec "silent! cs add /tmp/cscope.out"
+endfunction
+function! GenCtags()
+    exec "silent! !rm /tmp/tags"
+    exec "silent! !ctags -R -o /tmp/tags `pwd`"
+    exec "silent! set tags+=/tmp/tags"
+endfunction
+au BufWritePost *.c,*.cpp,*.h :call GenCscope()
+au BufWritePost *.c,*.cpp,*.h :call GenCtags()
+au BufWritePost *.erl,*.hrl   :call GenCtags()
+
+" CScope (from cscope_maps.vim)
+" " Jason Duell       jduell@alumni.princeton.edu     2002/3/7
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("cscope")
+    set cscopetag
+    set csto=0
+    set cscopeverbose  
+
+    "   's'   symbol: find all references to the token under cursor
+    "   'g'   global: find global definition(s) of the token under cursor
+    "   'c'   calls:  find all calls to the function name under cursor
+    "   't'   text:   find all instances of the text under cursor
+    "   'e'   egrep:  egrep search for the word under cursor
+    "   'f'   file:   open the filename under cursor
+    "   'i'   includes: find files that include the filename under cursor
+    "   'd'   called: find functions that function under cursor calls
+
+    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>  
+    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>  
+    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>  
+    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>  
+    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>  
+    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>  
+    nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>  
+endif
