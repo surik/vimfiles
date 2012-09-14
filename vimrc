@@ -38,7 +38,7 @@ if has('gui_running')
     set guifont=Consolas\ 11
 else
     set t_Co=256
-    color wombat256
+    color hickop
 endif
 
 set nobackup       " no backup files 
