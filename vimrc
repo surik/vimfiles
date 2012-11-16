@@ -2,7 +2,7 @@ call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
 set shm=atI                " Disable intro screen
-"set lazyredraw             " Don't redraw screen during macros
+set lazyredraw             " Don't redraw screen during macros
 "set ttyfast                " Improves redrawing for newer computers
 set nocompatible
 set backspace=indent,eol,start
@@ -21,6 +21,7 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set smartindent
+set scrolloff=1
 syntax on
 set hlsearch
 
@@ -123,7 +124,9 @@ let erlang_show_errors = 0
 let erlang_keywordprg = "man"
 
 " for syntastic
-let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_open = 1
+let syntastic_auto_loc_list = 1
+let syntastic_mode_map      = {'mode': 'passive'}
 
 " for tagbar
 let g:tagbar_compact = 1
