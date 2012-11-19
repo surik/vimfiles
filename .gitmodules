@@ -31,3 +31,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/Tab-Name"]
+	path = bundle/Tab-Name
+	url = https://github.com/vim-scripts/Tab-Name.git

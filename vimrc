@@ -51,7 +51,8 @@ set cursorline
 " clang
 let g:clang_debug=0 
 let g:clang_use_library=1 
-let g:clang_library_path="/usr/local/lib" 
+let g:clang_library_path="/usr/lib" 
+"let g:clang_library_path="/usr/local/lib" 
 "let g:clang_complete_auto=0
 
 " Keys
