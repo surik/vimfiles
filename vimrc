@@ -48,6 +48,14 @@ set noswapfile     " no swap files
 set pastetoggle=<F2>
 set cursorline
 
+" ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
 " clang
 let g:clang_debug=0 
 let g:clang_use_library=1 
@@ -126,7 +134,7 @@ let erlang_keywordprg = "man"
 
 " for syntastic
 "let g:syntastic_check_on_open = 1
-let syntastic_auto_loc_list = 1
+let syntastic_auto_loc_list = 2
 let syntastic_mode_map      = {'mode': 'passive'}
 
 " for tagbar
