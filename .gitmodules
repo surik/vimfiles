@@ -54,3 +54,6 @@
 	path = bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim.git
     ignore = dirty
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/msanders/snipmate.vim.git
