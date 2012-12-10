@@ -54,3 +54,7 @@
 	path = bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim.git
     ignore = dirty
+[submodule "bundle/syntastic.vim"]
+	path = bundle/syntastic.vim
+	url = https://github.com/scrooloose/syntastic.git
+    ignore = dirty
