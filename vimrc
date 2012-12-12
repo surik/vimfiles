@@ -51,7 +51,7 @@ set cursorline
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o,*.a     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
@@ -152,12 +152,12 @@ function! GenCscope()
     exec "silent! cs add /tmp/cscope.out"
 endfunction
 function! GenCtags()
-    exec "silent! !rm /tmp/tags"
-    exec "silent! !ctags -R -o /tmp/tags `pwd`"
-    exec "silent! set tags+=/tmp/tags"
+    exec "silent! !rm tags"
+    exec "silent! !ctags -R --file-scope=no"
+    "exec "silent! set tags+=/tmp/tags"
 endfunction
-au BufWritePost *.c,*.cpp,*.h :call GenCscope()
-au BufWritePost *.c,*.cpp,*.h :call GenCtags()
+au BufWritePost *.c,*.cpp,*.cc,*.cxx,*.h :call GenCscope()
+au BufWritePost *.c,*.cpp,*.cc,*.cxx,*.h :call GenCtags()
 au BufWritePost *.erl,*.hrl   :call GenCtags()
 
 " CScope (from cscope_maps.vim)
