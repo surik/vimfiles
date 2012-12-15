@@ -58,3 +58,6 @@
 	path = bundle/syntastic.vim
 	url = https://github.com/scrooloose/syntastic.git
     ignore = dirty
+[submodule "bundle/viewdoc"]
+	path = bundle/viewdoc
+	url = https://github.com/powerman/vim-plugin-viewdoc.git

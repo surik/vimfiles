@@ -63,6 +63,9 @@ let g:clang_library_path="/usr/lib"
 "let g:clang_library_path="/usr/local/lib" 
 "let g:clang_complete_auto=0
 
+" viewdoc
+let g:viewdoc_openempty=0
+
 " Keys
 " =============================
 imap <F4> <Esc>:tabnew<Esc>:e ./<CR> 
