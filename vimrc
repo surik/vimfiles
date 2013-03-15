@@ -14,6 +14,7 @@ set incsearch
 set ch=1
 set mouse=a
 set mousehide
+set mousemodel=popup
 set nu
 set ruler
 set expandtab
