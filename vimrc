@@ -27,7 +27,7 @@ syntax on
 set hlsearch
 
 if has('gui_running')
-    set background=dark
+    "set background=dark
     color solarized
     call togglebg#map("<F7>")
     set guioptions-=T
@@ -37,10 +37,12 @@ if has('gui_running')
     set guioptions-=r
     set guioptions-=e
     set guioptions+=c
-    set guifont=Consolas\ 11
+    set guifont=Menlo\ 12
 else
     set t_Co=256
-    color hickop
+    let g:solarized_termtrans = 1
+    let g:solarized_termcolors=256                                                                                                                                                                                                                                        
+    color solarized
 endif
 
 set nobackup       " no backup files 
@@ -59,8 +61,10 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " clang
 let g:clang_debug=0 
-let g:clang_use_library=1 
-let g:clang_library_path="/usr/lib" 
+let g:clang_use_library=1
+if has("gui_macvim")
+    let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/"
+endif
 "let g:clang_library_path="/usr/local/lib" 
 "let g:clang_complete_auto=0
 
