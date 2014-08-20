@@ -61,3 +61,6 @@
 [submodule "bundle/viewdoc"]
 	path = bundle/viewdoc
 	url = https://github.com/powerman/vim-plugin-viewdoc.git
+[submodule "bundle/vim-lfe"]
+	path = bundle/vim-lfe
+	url = https://github.com/lfex/vim-lfe

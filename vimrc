@@ -1,3 +1,4 @@
+call pathogen#infect()
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
@@ -26,7 +27,7 @@ set scrolloff=1
 syntax on
 set hlsearch
 
-if has('gui_running')
+if has("gui_macvim")
     "set background=dark
     color solarized
     call togglebg#map("<F7>")
@@ -37,7 +38,7 @@ if has('gui_running')
     set guioptions-=r
     set guioptions-=e
     set guioptions+=c
-    set guifont=Menlo\ 12
+    set guifont=Menlo:h12
 else
     set t_Co=256
     let g:solarized_termtrans = 1
@@ -101,10 +102,11 @@ set nofoldenable
 set foldmethod=manual
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python set completeopt=menu 
-autocmd FileType erlang compiler erlang
-"autocmd FileType erlang set omnifunc=erlangcomplete#Complete
+"autocmd FileType erlang compiler erlang
+"autocmd Filetype erlang setlocal omnifunc=erlang_complete#Complete
 autocmd FileType c compiler gcc
 autocmd FileType c set completeopt=menu 
+autocmd FileType gitcommit setlocal spell
 
 set laststatus=2
 set statusline=[%n]\ %<%.99f\ %h%w%m%r
@@ -166,7 +168,6 @@ function! GenCtags()
 endfunction
 au BufWritePost *.c,*.cpp,*.cc,*.cxx,*.h :call GenCscope()
 au BufWritePost *.c,*.cpp,*.cc,*.cxx,*.h :call GenCtags()
-au BufWritePost *.erl,*.hrl   :call GenCtags()
 
 " CScope (from cscope_maps.vim)
 " " Jason Duell       jduell@alumni.princeton.edu     2002/3/7
