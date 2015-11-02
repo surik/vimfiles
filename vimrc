@@ -38,7 +38,7 @@ if has("gui_macvim")
     set guioptions-=r
     set guioptions-=e
     set guioptions+=c
-    set guifont=Menlo:h12
+    set guifont=Menlo:h14
 else
     set t_Co=256
     let g:solarized_termtrans = 1
