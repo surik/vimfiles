@@ -153,6 +153,8 @@ let g:tagbar_compact = 1
 " for nerdtree
 let NERDTreeDirArrows=0
 
+let g:ackprg = 'ag --vimgrep'
+
 function! GenCscope()
     exec "silent! !rm /tmp/cscope.out"
     exec "silent! !cscope -R -b"
