@@ -5,7 +5,6 @@ Installation:
 Create symlinks:
 
     ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/clang_complete ~/.clang_complete
 
 Switch to the `~/.vim` directory, and fetch submodules:
 

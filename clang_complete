@@ -1,1 +1,0 @@
--I/usr/local/include -I/usr/include -I. -I./include -I./*/include -I./*/*/include

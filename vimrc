@@ -4,7 +4,6 @@ call pathogen#runtime_append_all_bundles()
 
 set shm=atI                " Disable intro screen
 set lazyredraw             " Don't redraw screen during macros
-"set ttyfast                " Improves redrawing for newer computers
 set nocompatible
 set backspace=indent,eol,start
 set incsearch
@@ -42,7 +41,7 @@ if has("gui_macvim")
 else
     set t_Co=256
     let g:solarized_termtrans = 1
-    let g:solarized_termcolors=256                                                                                                                                                                                                                                        
+    let g:solarized_termcolors=256
     color solarized
 endif
 
@@ -59,15 +58,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o,*.a     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-
-" clang
-let g:clang_debug=0 
-let g:clang_use_library=1
-if has("gui_macvim")
-    let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/"
-endif
-"let g:clang_library_path="/usr/local/lib" 
-"let g:clang_complete_auto=0
 
 " viewdoc
 let g:viewdoc_openempty=0
@@ -104,8 +94,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python set completeopt=menu 
 "autocmd FileType erlang compiler erlang
 "autocmd Filetype erlang setlocal omnifunc=erlang_complete#Complete
-autocmd FileType c compiler gcc
-autocmd FileType c set completeopt=menu 
+
 autocmd FileType gitcommit setlocal spell
 
 set laststatus=2
@@ -152,48 +141,3 @@ let g:tagbar_compact = 1
 
 " for nerdtree
 let NERDTreeDirArrows=0
-
-let g:ackprg = 'ag --vimgrep'
-
-function! GenCscope()
-    exec "silent! !rm /tmp/cscope.out"
-    exec "silent! !cscope -R -b"
-    exec "silent! !cp cscope.out /tmp/cscope.out"
-    exec "silent! !rm cscope.out"
-    exec "silent! cs reset"
-    exec "silent! cs add /tmp/cscope.out"
-endfunction
-function! GenCtags()
-    exec "silent! !rm tags"
-    exec "silent! !ctags -R --file-scope=no"
-    "exec "silent! set tags+=/tmp/tags"
-endfunction
-au BufWritePost *.c,*.cpp,*.cc,*.cxx,*.h :call GenCscope()
-au BufWritePost *.c,*.cpp,*.cc,*.cxx,*.h :call GenCtags()
-
-" CScope (from cscope_maps.vim)
-" " Jason Duell       jduell@alumni.princeton.edu     2002/3/7
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has("cscope")
-    set cscopetag
-    set csto=0
-    set cscopeverbose  
-
-    "   's'   symbol: find all references to the token under cursor
-    "   'g'   global: find global definition(s) of the token under cursor
-    "   'c'   calls:  find all calls to the function name under cursor
-    "   't'   text:   find all instances of the text under cursor
-    "   'e'   egrep:  egrep search for the word under cursor
-    "   'f'   file:   open the filename under cursor
-    "   'i'   includes: find files that include the filename under cursor
-    "   'd'   called: find functions that function under cursor calls
-
-    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>  
-    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>  
-    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>  
-    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>  
-    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>  
-    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>  
-    nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>  
-endif
