@@ -25,9 +25,9 @@ set smartindent
 set scrolloff=1
 syntax on
 set hlsearch
+set background=light
 
 if has("gui_macvim")
-    "set background=dark
     color solarized
     call togglebg#map("<F7>")
     set guioptions-=T
