@@ -6,10 +6,6 @@
 	path = bundle/vim-supertab
 	url = git://github.com/tsaleh/vim-supertab.git
     ignore = dirty
-[submodule "bundle/csapprox"]
-	path = bundle/csapprox
-	url = git://github.com/godlygeek/csapprox.git
-    ignore = dirty
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
