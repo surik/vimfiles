@@ -70,6 +70,3 @@
 [submodule "bundle/vim-gitgutter.git"]
 	path = bundle/vim-gitgutter.git
 	url = git@github.com:airblade/vim-gitgutter.git
-[submodule "bundle/rust.vim"]
-	path = bundle/rust.vim
-	url = git@github.com:rust-lang/rust.vim.git
