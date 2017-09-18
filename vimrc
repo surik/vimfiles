@@ -62,6 +62,9 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 " viewdoc
 let g:viewdoc_openempty=0
 
+" Taboo
+let g:taboo_tab_format = " %p "
+
 " Keys
 " =============================
 imap <F4> <Esc>:tabnew<Esc>:e ./<CR> 
