@@ -51,6 +51,11 @@ set noswapfile     " no swap files
 set pastetoggle=<F2>
 set cursorline
 
+" vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
