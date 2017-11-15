@@ -62,3 +62,6 @@
 	path = bundle/alchemist.vim
 	url = https://github.com/slashmili/alchemist.vim.git
     ignore = dirty
+[submodule "bundle/vim-ember-hbs"]
+	path = bundle/vim-ember-hbs
+	url = https://github.com/joukevandermaas/vim-ember-hbs.git
