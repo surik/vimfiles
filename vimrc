@@ -134,11 +134,9 @@ let Tlist_Show_One_File = 1
 "call rainbow_parentheses#LoadSquare()
 "call rainbow_parentheses#LoadChevrons()
 
-" for vimerl
-let g:erlang_completion_grep="zgrep"
-let g:erlang_man_extension="erl\.gz"
-let erlang_show_errors = 0
-let erlang_keywordprg = "man"
+" for vim-erlang
+set cot-=preview
+let g:erlang_completion_preview_help = 0
 
 " for syntastic
 "let g:syntastic_check_on_open = 1

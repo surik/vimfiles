@@ -1,18 +1,6 @@
-[submodule "bundle/vimerl"]
-	path = bundle/vimerl
-	url = git://github.com/jimenezrick/vimerl.git
-    ignore = dirty
-[submodule "bundle/vim-supertab"]
-	path = bundle/vim-supertab
-	url = git://github.com/tsaleh/vim-supertab.git
-    ignore = dirty
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-    ignore = dirty
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
-	url = git://github.com/msanders/snipmate.vim.git
     ignore = dirty
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
@@ -65,3 +53,18 @@
 [submodule "bundle/vim-ember-hbs"]
 	path = bundle/vim-ember-hbs
 	url = https://github.com/joukevandermaas/vim-ember-hbs.git
+[submodule "bundle/vim-erlang-omnicomplete"]
+	path = bundle/vim-erlang-omnicomplete
+	url = https://github.com/vim-erlang/vim-erlang-omnicomplete.git
+    ignore = dirty
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab
+[submodule "bundle/vim-erlang-compiler"]
+	path = bundle/vim-erlang-compiler
+	url = https://github.com/vim-erlang/vim-erlang-compiler.git
+    ignore = dirty
+[submodule "bundle/vim-erlang-skeletons"]
+	path = bundle/vim-erlang-skeletons
+	url = https://github.com/vim-erlang/vim-erlang-skeletons.git
+    ignore = dirty
