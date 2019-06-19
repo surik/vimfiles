@@ -5,6 +5,7 @@ Installation:
 Create symlinks:
 
     ln -s ~/.vim/vimrc ~/.vimrc
+    ln -s ~/.vim/tmux.conf ~/.tmux.conf
 
 Switch to the `~/.vim` directory, and fetch submodules:
 
