@@ -15,6 +15,7 @@ set ch=1
 set mouse=a
 set mousehide
 set mousemodel=popup
+set ttymouse=xterm2
 set nu
 set ruler
 set expandtab
@@ -45,9 +46,9 @@ else
     color solarized
 endif
 
-set nobackup       " no backup files 
-set nowritebackup  " only in case you don't want a backup file while editing 
-set noswapfile     " no swap files 
+set nobackup       " no backup files
+set nowritebackup  " only in case you don't want a backup file while editing
+set noswapfile     " no swap files
 set pastetoggle=<F2>
 set cursorline
 
@@ -73,7 +74,7 @@ let g:taboo_tab_format = " %p "
 
 " Keys
 " =============================
-imap <F4> <Esc>:tabnew<Esc>:e ./<CR> 
+imap <F4> <Esc>:tabnew<Esc>:e ./<CR>
 map <F4> <Esc>:tabnew<Esc>:e ./<CR>
 
 imap <F5> <Esc> :tabprev <CR>i
@@ -100,7 +101,7 @@ filetype indent on
 set nofoldenable
 set foldmethod=manual
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType python set completeopt=menu 
+autocmd FileType python set completeopt=menu
 "autocmd FileType erlang compiler erlang
 "autocmd Filetype erlang setlocal omnifunc=erlang_complete#Complete
 
@@ -148,3 +149,10 @@ let g:tagbar_compact = 1
 
 " for nerdtree
 let NERDTreeDirArrows=0
+
+" for alchemist
+set autoread
+autocmd BufWritePost *.exs,*.ex silent :!mix format %
+
+" remove trailing whitespaces
+autocmd BufWritePre * %s/\s\+$//e
