@@ -15,7 +15,9 @@ set ch=1
 set mouse=a
 set mousehide
 set mousemodel=popup
-set ttymouse=xterm2
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 set nu
 set ruler
 set expandtab
