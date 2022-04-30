@@ -6,6 +6,7 @@ Create symlinks:
 
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/tmux.conf ~/.tmux.conf
+    ln -s ~/.vim/tigrc ~/.tigrc
 
 Switch to the `~/.vim` directory, and fetch submodules:
 
