@@ -8,12 +8,12 @@ Create symlinks:
     ln -s ~/.vim/tmux.conf ~/.tmux.conf
     ln -s ~/.vim/tigrc ~/.tigrc
 
-Switch to the `~/.vim` directory, and fetch submodules:
+Install Tmux Plugin Manager:
 
-    cd ~/.vim
-    git submodule init
-    git submodule update
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-Te recursive update all submodules use:
 
-    git submodule update --recursive --remote
+In Vim run 
+
+    :PluginInstall
+    :GoInstallBinaries 
